@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Mileage Calculator Spec Runner</title>
+
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+
+  <!-- include source files here... -->
+  <script type="text/javascript">
+    var rr = rr || {};
+  </script>
+  
+  <script type="text/javascript" src="src/MileageCalculator.js"></script>
+  
+</head>
+<body>
+    
+    <div id="mileageForm">
+        How many miles do you do on a weekday (per day)?<input type="text" data-bind="value: WeekdayMilesPerDay" /><br />
+        How many miles do you do at the weekend (total)?<input type="text" data-bind="value: WeekendMilesPerWeekend" /><br />
+        How many ad-hoc miles do you drive in a yearish?<input type="text" data-bind="value: AdhocMilesPerYear" /><br />
+        
+        Your Calculated Miles are: <span data-bind="text: TotalMiles"></span>
+    </div>
+    
+</body>
+
+<script type="text/javascript">
+    
+    viewModel = new rr.MileageCalculator();
+    ko.applyBindings(viewModel, document.getElementById("mileageForm"));
+    
+</script>
+</html>
